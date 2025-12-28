@@ -40,12 +40,12 @@ def get_qdrant():
         # url=os.getenv("QDRANT_URL"),
         # api_key=os.getenv("QDRANT_API_KEY")
         
-          url = "https://3828422c-46dd-423e-ae04-60d1c8c180ac.europe-west3-0.gcp.cloud.qdrant.io:6333",
-          api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.O5cbwPZSZHB5wY6MzkWLjNcVIFcf7GrHbZHONgEh1fY"
+          url = url,
+        api_key = apiKey
     )
 
 def get_cohere() -> cohere.Client:
-    api_key = "EZeCjZvxDjpFwNf59ycDKnui2r7n20DMGSIjP25W"
+    api_key = apiKey
     # print("Cohere key length:", len(os.getenv("COHERE_API_KEY") or ""))
     # print("Cohere key:", api_key)
     if not api_key:
@@ -54,7 +54,7 @@ def get_cohere() -> cohere.Client:
 
 def get_gemini() -> OpenAI:
     # api_key = os.getenv("GEMINI_API_KEY")
-    api_key = "AIzaSyAViKui7Ub53Z30wHZWu6RGfuM2kHNG9XM"
+    api_key = key
     if not api_key:
         raise ValueError("GEMINI_API_KEY missing")
     return OpenAI(
